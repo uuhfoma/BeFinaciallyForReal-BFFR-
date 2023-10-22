@@ -68,44 +68,52 @@
 
 
 
-    
-    <script src="BFFR.js"></script>
-</body>
-        </div>
-        <div class="register-link">
-       <p>Don't have an account? <a href="#">Register</a></p> 
-        </div>
-    </div>
- <div class="wrapper" id="register-form" style="display: none;">
+    div class="wrapper" id="register-form-container" style="display: none;">
         <form action="" id="registration-form">
             <h1>Register</h1>
             <div class="input-box">
-                <input type="text" placeholder="Username" required>
+                <input type="text" placeholder="Username" required id="register-username">
                 <i class='bx bxs-user'></i>
             </div>
             <div class="input-box">
-                <input type="password" placeholder="Password" required>
+                <input type="password" placeholder="Password" required id="register-password">
                 <i class='bx bxs-lock'></i>
             </div>
-            <!-- Additional registration fields can be added as needed -->
-            <button type="submit" class="btn" onclick="register()">Register</button>
+            <button type="button" class="btn" onclick="register()">Register</button>
         </form>
     </div>
-    
-</body>
-<script src="BFFR.js"></script>
+
+    <script src="BFFR.js"></script>
     <script>
         function showRegisterForm() {
-            document.getElementById('login-form').style.display = 'none';
-            document.getElementById('register-form').style.display = 'block';
+            document.getElementById('login-form-container').style.display = 'none';
+            document.getElementById('register-form-container').style.display = 'block';
         }
 
         function register() {
-            document.getElementById('login-form').style.display = 'block';
-            document.getElementById('register-form').style.display = 'none';
+            const usernameInput = document.getElementById('register-username');
+            const passwordInput = document.getElementById('register-password');
+
+            const username = usernameInput.value.trim();
+            const password = passwordInput.value.trim();
+
+            if (!username || !password) {
+                alert("Please enter both username and password to register.");
+                return;
+            }
+
+            // Here you would typically send the registration data to the server
+            // and handle the registration process securely.
+            
+            alert(`Registration successful! Welcome, ${username}.`);
+
+            // For simplicity, let's switch back to the login form after registration
+            document.getElementById('login-form-container').style.display = 'block';
+            document.getElementById('register-form-container').style.display = 'none';
         }
 
         function login() {
+            // Implement login logic here
         }
          </script>
 </html>
