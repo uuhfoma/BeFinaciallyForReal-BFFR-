@@ -9,60 +9,60 @@
     <title>BFFR</title>
 </head>
 <body>
-    <div class="wrapper" id="login-form">
-        <form action="select_page.html" onsubmit="return continueToApp();">
+    <div class="wrapper" id="login-wrapper">
+        <form id="loginForm" onsubmit="return continueToApp();">
             <h1>Login</h1>
-            <div class="username-box">
-                <input type="text" placeholder="Username" required>
+            <div class="input-box">
+                <input type="text" id="username-input" placeholder="Username" required>
                 <i class='bx bxs-user'></i>
             </div>
-            <div class="password-box">
-                <input type="password" placeholder="Password" required>
+            <div class="input-box">
+                <input type="password" id="password-input" placeholder="Password" required>
                 <i class='bx bxs-lock'></i>
             </div>
             <div class="remember-forgot">
-                <label> <input type="checkbox"> Remember me</label>
+                <label><input type="checkbox"> Remember me</label>
                 <br>
                 <button type="submit" class="btn">Login</button>
                 <br>
                 <a href="#">Forgot password?</a>
             </div>
+            <div class="register-link">
+                <p>Don't have an account? <a href="#" onclick="showRegisterForm()">Register</a></p>
+            </div>
         </form>
-        <div class="register-link">
-            <p>Don't have an account? <a href="#" onclick="showRegisterForm()">Register</a></p>
-        </div>
     </div>
 
     <div class="wrapper" id="register-form" style="display: none;">
-        <form action="" id="registration-form">
+        <form id="registration-form" onsubmit="return register();">
             <h1>Register</h1>
             <div class="input-box">
-                <input type="text" placeholder="Username" required>
+                <input type="text" id="reg-username-input" placeholder="Username" required>
                 <i class='bx bxs-user'></i>
             </div>
             <div class="input-box">
-                <input type="password" placeholder="Password" required>
+                <input type="password" id="reg-password-input" placeholder="Password" required>
                 <i class='bx bxs-lock'></i>
             </div>
             <!-- Additional registration fields can be added as needed -->
-            <button type="submit" class="btn" onclick="register()">Register</button>
+            <button type="submit" class="btn">Register</button>
         </form>
     </div>
 
     <script src="BFFR.js"></script>
-
     <script>
         function showRegisterForm() {
-            document.getElementById('login-form').style.display = 'none';
+            document.getElementById('login-wrapper').style.display = 'none';
             document.getElementById('register-form').style.display = 'block';
         }
 
         function register() {
-            // Handle registration logic here (send data to server, etc.)
-            document.getElementById('login-form').style.display = 'block';
+            document.getElementById('login-wrapper').style.display = 'block';
             document.getElementById('register-form').style.display = 'none';
+            return false; // Prevent form submission for demo purposes
         }
     </script>
 </body>
 </html>
+
 
