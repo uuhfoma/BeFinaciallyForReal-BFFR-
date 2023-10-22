@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-    
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,11 +7,10 @@
     <link rel="stylesheet" href="BFFR.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>BFFR</title>
-<!--     <link rel="stylesheet" href="BFFR.css"> -->
 </head>
 <body>
     <div class="wrapper">
-        <form id= "signupForm" action="select_page.html" onsubmit = "return continueToApp() ;">
+        <form id="login-form" action="select_page.html" onsubmit="return continueToApp();">
             <h1>Login</h1>
             <div class="username-box">
                 <input type="text" placeholder="Username" required>
@@ -22,29 +20,20 @@
                 <input type="password" placeholder="Password" required>
                 <i class='bx bxs-lock'></i>
             </div>
+            <div class="remember-forgot">
+                <label> <input type="checkbox"> Remember me</label>
+                <br>
+                <button type="submit" class="btn">Login</button>
+                <br>
+                <a href="#">Forgot password?</a>
+            </div>
         </form>
-        <div class="remember-forgot">
-        <label> <input type="checkbox"> Remember me</label>
-        <br>
-        <button type="submit" class="btn">Login</button>
-        <br>
-            <a href="#">Forgot password?</a>
-    </div>
-    <button type="submit" class="btn">Login</button> 
-
-    <div class="register-link">
-       <p>Don't have an account? <a href="#">Register</a></p>
-
-    </div>
-
-    <script src="BFFR.js"></script>
-</body>
-        </div>
         <div class="register-link">
-       <p>Don't have an account? <a href="#">Register</a></p> 
+            <p>Don't have an account? <a href="#" onclick="showRegisterForm()">Register</a></p>
         </div>
     </div>
- <div class="wrapper" id="register-form" style="display: none;">
+
+    <div class="wrapper" id="register-form" style="display: none;">
         <form action="" id="registration-form">
             <h1>Register</h1>
             <div class="input-box">
@@ -59,21 +48,20 @@
             <button type="submit" class="btn" onclick="register()">Register</button>
         </form>
     </div>
-    
-<script src="BFFR.js"></script>
 
-<script>
-function showRegisterForm() {
+    <script src="BFFR.js"></script>
+
+    <script>
+        function showRegisterForm() {
             document.getElementById('login-form').style.display = 'none';
             document.getElementById('register-form').style.display = 'block';
         }
 
         function register() {
+            // Handle registration logic here (send data to server, etc.)
             document.getElementById('login-form').style.display = 'block';
             document.getElementById('register-form').style.display = 'none';
         }
-</script>
-
-        
+    </script>
+</body>
 </html>
-   
