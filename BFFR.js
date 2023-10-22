@@ -3,20 +3,20 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function continueToApp() {
-    const usernameInput = document.getElementById('username-input');
-    const emailInput = document.getElementById('email-input');
+    const usernameInput = document.getElementById('username-box');
+    const passInput = document.getElementById('password-box');
 
     const username = usernameInput.value.trim();
-    const email = emailInput.value.trim();
+    const pass = passInput.value.trim();
 
-    if (!username || !email) {
-        alert("Please enter your name and email to continue.");
+    if (!username || !pass) {
+        alert("Please enter your name and password to continue.");
         return;
     }
 
     const user = {
         username,
-        email,
+        pass,
         savingsGoal: 0,
         savingsDuration: 0,
         savingsFrequency: '',
@@ -68,8 +68,8 @@ function loadSavingsLog() {
 }
 
 function loadUserData() {
-    const userSection = document.getElementById('user-section');
-    const appSection = document.getElementById('app-section');
+    const userSection = document.getElementById('wrapper');
+    const appSection = document.getElementById('select_page');
     const user = JSON.parse(localStorage.getItem('user'));
 
     if (user) {
