@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style1.css">
+    <title>Financial Wellness App</title>
+</head>
+<body>
+    <header>
+        <h1>Financial Wellness App</h1>
+    </header>
+
+    <main>
+        <section id="user-section">
+            <h2>User Information</h2>
+            <label for="username-input">Enter your name:</label>
+            <input type="text" id="username-input" placeholder="Your name">
+            <label for="email-input">Enter your email:</label>
+            <input type="email" id="email-input" placeholder="Your email">
+            <button onclick="continueToApp()">Continue</button>
+        </section>
+
+        <section id="app-section" style="display: none;">
+            <section id="savings-section">
+                <h2>Savings Input</h2>
+                <label for="savings-amount">How much did you save?</label>
+                <input type="number" id="savings-amount" placeholder="Enter amount">
+                <label for="savings-frequency">How often did you save?</label>
+                <select id="savings-frequency">
+                    <option value="daily">Daily</option>
+                    <option value="weekly">Weekly</option>
+                    <!-- You can add more frequency options as needed -->
+                </select>
+                <button onclick="trackSavings()">Track Savings</button>
+            </section>
+
+            <section id="progress-section">
+                <h2>Savings Progress</h2>
+                <div id="savings-log"></div>
+            </section>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Financial Wellness App</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
