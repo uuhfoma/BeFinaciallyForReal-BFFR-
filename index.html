@@ -34,6 +34,36 @@
        <p>Don't have an account? <a href="#">Register</a></p> 
         </div>
     </div>
+ <div class="wrapper" id="register-form" style="display: none;">
+        <form action="" id="registration-form">
+            <h1>Register</h1>
+            <div class="input-box">
+                <input type="text" placeholder="Username" required>
+                <i class='bx bxs-user'></i>
+            </div>
+            <div class="input-box">
+                <input type="password" placeholder="Password" required>
+                <i class='bx bxs-lock'></i>
+            </div>
+            <!-- Additional registration fields can be added as needed -->
+            <button type="submit" class="btn" onclick="register()">Register</button>
+        </form>
+    </div>
+    
 </body>
 <script src="BFFR.js"></script>
+    <script>
+        function showRegisterForm() {
+            document.getElementById('login-form').style.display = 'none';
+            document.getElementById('register-form').style.display = 'block';
+        }
+
+        function register() {
+            document.getElementById('login-form').style.display = 'block';
+            document.getElementById('register-form').style.display = 'none';
+        }
+
+        function login() {
+        }
+         </script>
 </html>
