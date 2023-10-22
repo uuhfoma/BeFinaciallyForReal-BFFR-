@@ -68,8 +68,8 @@ function loadSavingsLog() {
 }
 
 function loadUserData() {
-    const userSection = document.getElementById('user-section');
-    const appSection = document.getElementById('app-section');
+    const userSection = document.getElementById('wrapper');
+    const appSection = document.getElementById('select_page');
     const user = JSON.parse(localStorage.getItem('user'));
 
     if (user) {
